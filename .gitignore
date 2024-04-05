@@ -1,0 +1,30 @@
+# Ignore configuration files that may contain sensitive information
+wp-config.php
+
+# Ignore database related files
+/.htaccess
+/wp-content/debug.log
+/wp-content/advanced-cache.php
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/uploads/
+
+# Ignore specific WordPress core files
+/xmlrpc.php
+
+# Ignore node_modules folder to keep the repository clean
+/node_modules/
+
+
+# Ignore all plugins except your custom plugin (replace 'your-plugin-name')
+
+
+# Ignore other unnecessary files and directories
+/.quarantine
+/.tmb
+*.log
+.DS_Store
+/__MACOSX
