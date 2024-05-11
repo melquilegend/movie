@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo {
+    font-size: 30px;
+    color: #4dbf00;
+  }
+  
+  .menu-container {
+    flex: 6;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    margin-right: 30px;
+  }
+
+  .menu-list-item > a{
+    margin-right: 30px;
+    text-decoration: none;
+    color: inherit;  /* Inherits the color from the parent element */
+
+  }
+  
+  .menu-list-item.active {
+    font-weight: bold;
+  }
+  .profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .toggle-icon {
+    color: goldenrod;
+  }
+  
+  .toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s ease all;
+  }
+  
+  .sidebar {
+    width: 50px;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    z-index: 1;
+  }
+  
+  .left-menu-icon {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+  }
+  
+  .content-container {
+    margin-left: 50px;
+  }
+  
+  .featured-content {
+    height: 50vh;
+    padding: 50px;
+  }
+  
+  .featured-title {
+    width: 200px;
+  }
+  
+  .featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+  }
+  
+  .featured-button {
+    background-color: #4dbf00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .movie-list-container {
+    padding: 0 20px;
+  }
+  
+  .movie-list-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+  
+  .movie-list-item {
+    margin-right: 30px;
+    position: relative;
+  }
+  
+  .movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+  }
+  
+  .movie-list-item:hover .movie-list-item-title,
+  .movie-list-item:hover .movie-list-item-desc,
+  .movie-list-item:hover .movie-list-item-button {
+    opacity: 1;
+  }
+  
+  .movie-list-item-img {
+    transition: all 1s ease-in-out;
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .movie-list-item-title {
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .movie-list-item-desc {
+    background-color: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .movie-list-item-button {
+    padding: 10px;
+    background-color: #4dbf00;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  .container.active {
+    background-color: white;
+  }
+  
+  .movie-list-title.active {
+    color: black;
+  }
+  
+  .navbar-container.active {
+    background-color: white;
+  
+    color: black;
+  }
+  
+  .sidebar.active{
+      background-color: white;
+  }
+  
+  .left-menu-icon.active{
+      color: black;
+  }
+  
+  .toggle.active{
+      background-color: black;
+  }
+  
+  .toggle-ball.active{
+      background-color: white;
+      transform: translateX(-20px);
+  }
+  
+  @media only screen and (max-width: 940px){
+      .menu-container{
+          display: none;
+      }
+  }
+
+  section{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section .content-details{
+    position: absolute;
+    left: 2px;
+    top: 625px;
+   
+  }
+
+  section .content-details .details  span{
+    position: relative;
+    top: -245px;
+    left: 140px;
+    font-size: 1.5rem;
+    color: white;
+    margin: 12px;
+    font-weight: 400;
+  }
+  .details .classification:last-child{
+    border: 1px solid rgb(182, 181, 181);
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+    font-size: 1.5rem;
+  }
+  .poster{
+    width: auto;
+    height: 220px;
+    position: absolute;
+    top: 140px;
+    left: 145px;
+  }
+  .button span{
+    position: relative;
+    top: -205px;
+    left: 108px;
+    color: white;
+    margin: 10px;
+    font-weight: 500;
+  }
+
+  .button .btn1{
+    background-color: red;
+    padding: 14px 26px;
+    border-radius: 2px;
+    transition: 0.5s;
+  }
+
+  .button .btn2{
+    border: unset !important;
+    background-color: #ffffff2e;
+    padding: 14px 26px !important;
+    border-radius: 2px !important;
+    transition: 0.5s !important;
+  }
+
+  .sec{
+    padding-left: 110px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+ 
+ .sec .info{
+      display: flex;
+      gap: 20px;
+     position: relative;
+     margin-bottom: 10px;
+     color: white;
+  }
+
+  .poster_for{
+    width: 200px;
+    
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  .row > * {
+    flex-shrink: 0; /* prevents flex items from shrinking */
+    flex-basis: auto; /* bases the size on the content or specified size */
+}
+.row img {
+    max-width: 100%; /* ensures image is not wider than its container */
+    height: auto; /* keeps the aspect ratio intact */
+}
+
+.row2{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.title-description{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.movie-information{
+padding-right: 1000px;
+}
+.actordetails{
+  padding-left: 100px;
+}
+.actor_name{
+    display: grid;
+    align-items: end;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    align-content: center;
+    justify-content: center;
+}
+.actor_link{
+  text-decoration: none;
+  color: white;
+}
+.actor-detail-container {
+  display: flex;
+  align-items: start;
+  padding: 20px;
+}
+.actor-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+.actor-content {
+  padding-left: 20px;
+}
+.actor-details p, .actor-content h1, .actor-content .actor-bio {
+  padding: 5px 0;
+}
+.actor-bio{
+  padding-right: 600px !important;
+}
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.movie-card {
+  margin: 10px;
+  text-align: center;
+}
+.movie-card img {
+  width: 200px;
+  height: auto;
+}
+.gallery{
+  padding: 20px;
+}
+.actor-gallery{
+  width: 300px;
+}
+//movies
+.review-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #121212;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: #F5C518;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+
+  justify-items: center;
+}
+
+.review-card {
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  width: 300px;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.movie-title {
+  margin: 10px 0;
+}
+
+.genre {
+  font-size: 14px;
+  color: #888;
+}
+
+.rating {
+  font-weight: bold;
+  color: #F5C518;
+}

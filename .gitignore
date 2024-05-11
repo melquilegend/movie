@@ -11,6 +11,7 @@ wp-config.php
 /wp-content/cache/
 /wp-content/upgrade/
 /wp-content/uploads/
+/wp-content/themes/movies/node_modules
 
 # Ignore specific WordPress core files
 /xmlrpc.php

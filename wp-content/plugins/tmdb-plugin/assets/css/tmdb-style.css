@@ -1,0 +1,13 @@
+.movies, .actors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.movie, .actor {
+    margin: 10px;
+    text-align: center;
+}
+.movie img, .actor img {
+    width: 100px;
+    height: auto;
+}
